@@ -1,1 +1,26 @@
+/* --- style.css content --- */
 
+/* 1. Body Styling (Required Background Color & Font Family) */
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default browser margin */
+}
+
+/* 2. Heading Styles (Required Font Color) */
+h1, h2, h3 {
+    color: #333333; /* Dark gray font color */
+}
+
+/* 3. Positioning Div Style (The 3rd style definition) */
+#wrapper {
+    max-width: 900px;
+    margin: 40px auto; /* Centers the whole resume */
+    background-color: white; 
+    padding: 20px;
+}
+
+/* 4. Link Style (The 4th style definition) */
+a {
+    color: #007bff; /* Blue links */
+}
