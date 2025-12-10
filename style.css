@@ -1,24 +1,37 @@
 /* --- style.css content --- */
 
-/* 1. Sets the default font and text color */
+/* 1. Sets the default font and text color, AND centers the text */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    text-align: center;
+    text-align: center; /* Centers all inline elements on the page */
 }
 
-/* 2. CENTERS and STYLES the RESUME BLOCK */
+/* 2. Centers and styles the PROFESSOR ANALYSIS block */
+#professor-analysis {
+    max-width: 800px; 
+    margin: 0 auto 50px auto; /* Centers the block itself */
+    text-align: center; /* Centers text/content inside the block */
+}
+
+/* Makes sure lists inside the analysis center too */
+#professor-analysis ol, #professor-analysis ul {
+    display: inline-block;
+    text-align: left; /* Aligns the list items to the left for readability */
+}
+
+/* 3. CENTERS and STYLES the RESUME BLOCK */
 #wrapper {
-    /* Required for positioning and styling */
     max-width: 900px;
     margin: 40px auto; /* Centers the whole resume block */
-    background-color: white; /* Makes the resume reappear on the blue background */
+    background-color: white; 
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* IMPORTANT: Resets text to left-aligned inside the resume for readability */
 }
 
-/* 3. Styles for the two required inner divs */
+/* 4. Styles for the required inner divs */
 #top-area {
     text-align: center;
     border-bottom: 2px solid #333;
@@ -27,15 +40,14 @@ body {
 }
 
 #main-content {
-    /* Styles for the rest of the content */
     padding-top: 10px;
 }
 
-/* 4. Basic heading/link styles */
+/* 5. Basic heading/link styles */
 h1, h2 {
-    color: #333333; /* Dark gray font color (Required font color) */
+    color: #333333;
 }
 
 a {
-    color: #007bff; /* Link color */
+    color: #007bff;
 }
