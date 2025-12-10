@@ -52,7 +52,138 @@
 
 <img src="https://cdn.mindmajix.com/blog/images/paretochart-2412211.png" alt="approval rating over time">
 
-    
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silly Insult Generator</title>
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffe0e0; /* Light Pink Background */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        #app-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 90%;
+            border: 5px dashed #ff6666; /* Red Dashed Border */
+        }
+        h1 {
+            color: #cc0000; /* Dark Red Heading */
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        #insult-output {
+            min-height: 80px;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #ff9999;
+            background-color: #fff0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        button {
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s;
+        }
+        button:hover {
+            background-color: #ff3333;
+            transform: scale(1.05);
+        }
+        /* Custom touch: Make the generated insult text slightly wobble on generation */
+        .wobble {
+            animation: wobble 0.5s ease;
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-2deg); }
+            75% { transform: rotate(2deg); }
+        }
+        .subtitle {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: -20px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app-container">
+        <h1>Silly Insult Generator</h1>
+        <p class="subtitle">For when you need to be gently, but specifically, mean.</p>
+        
+        <div id="insult-output">
+            Click the button to generate an insult!
+        </div>
+
+        <button onclick="generateInsult()">Generate Insult</button>
+    </div>
+
+    <script>
+        // Lists of insult-vibe words
+        const adjectives = [
+            "Dusty", "Wobbly", "Malodorous", "Fuzzy", "Damp", "Lumpy", 
+            "Mismatched", "Uncooked", "Squeaky", "Transparent", "Glittery",
+            "Toad-licking", "Clumsy", "Moldy", "Deflated", "Underbaked"
+        ];
+
+        const nouns = [
+            "Spoon", "Teapot", "Sock-puppet", "Gerbil", "Cabbage", "Doorknob", 
+            "Waffle-iron", "Pillowcase", "Potato", "Towel-rack", "Squirrel", 
+            "Dust-bunny", "Turnip", "Biscuit", "Ostrich", "Platypus"
+        ];
+
+        function generateInsult() {
+            // Function to pick a random item from any array
+            const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+            const randomAdjective = getRandomItem(adjectives);
+            const randomNoun = getRandomItem(nouns);
+
+            const insult = `You ${randomAdjective} ${randomNoun}!`;
+            
+            const outputElement = document.getElementById('insult-output');
+            
+            // 1. Display the insult
+            outputElement.innerHTML = insult;
+            
+            // 2. Add the wobble class for the creative effect
+            outputElement.classList.add('wobble');
+            
+            // 3. Remove the wobble class after the animation finishes
+            setTimeout(() => {
+                outputElement.classList.remove('wobble');
+            }, 500); // Matches the animation duration
+        }
+    </script>
+
+</body>
+
 
     <div id="wrapper"> 
 
